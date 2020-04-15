@@ -1,0 +1,8 @@
+doctype html
+html(lang="en")
+    head
+        title TO-DO
+    body
+        form(action='/todo',method="post")
+            input(type='text' name='task' placeholder='Enter Task')
+            button(type="submit") Add Item
