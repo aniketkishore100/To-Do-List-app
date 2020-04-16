@@ -2,7 +2,13 @@ doctype html
 html(lang="en")
     head
         title TO-DO
+        link(href='/assets/style.css' rel='stylesheet' type='text/css')
     body
-        form(action='/todo',method="post")
-            input(type='text' name='task' placeholder='Enter Task')
-            button(type="submit") Add Item
+        #todo-table
+            form(action='/todo',method="post")
+                input(type='text' name='item' placeholder='Enter Task' required)
+                button(type="submit") Add Item
+            
+            ul
+                each task in data
+                    li= task.item
