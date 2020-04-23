@@ -1,7 +1,9 @@
 body{
-    background: #0d1521;
+    background: #ffe4f2;
+    /* background-image: linear-gradient( to bottom right,#f8abd2 ,#af30c9); */
+    background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:#989898;
+    color:#989898;;
 }
 
 #todo-table{
@@ -11,8 +13,8 @@ body{
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
+    border-radius: 10px;
 }
-
 #todo-table form:after{
     margin: 0;
     content: '';
@@ -23,8 +25,11 @@ body{
 input[type="text"]{
     width:65%;
     padding:20px;
-    background:#181c22;
+    /* background:#181c22; */
+    background-image: linear-gradient(to right, rgba(24, 28, 34, 1), rgba(24, 28, 34, .8));
     border: 0;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     float: left;
     font-size: 20px;
     color: #989898;
@@ -34,8 +39,11 @@ button{
     padding: 20px;
     width: 30%;
     float: left;
-    background: #23282e;
+    /* background: #eb2020; */
+    background-image: linear-gradient(to right, rgba(235, 32, 32,.7), rgba(235, 32, 32,1));
     border: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
@@ -44,6 +52,7 @@ button{
 ul{
     list-style-type: none;
     padding: 0;
+    padding-top: 100px;
     margin: 0;
 }
  
@@ -53,6 +62,7 @@ li{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    color: ivory;
     cursor: pointer;
     letter-spacing: 1px;
 }

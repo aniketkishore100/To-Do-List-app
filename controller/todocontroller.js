@@ -1,4 +1,4 @@
-const data = [{item: 'get milk'}, {item: 'walk dog'}, {item: 'kick some coding'}];
+let data = [{item: "heyy"}];
 
 
 module.exports = function(app){
@@ -9,6 +9,14 @@ module.exports = function(app){
     })
     
     app.post('/todo',(req,res)=>{
-        res.redirect('/todo')
+        data.push(req.body);
+        res.json({success:true,todo:data})
+    })
+
+    app.delete('/todo/:item',(req,res)=>{
+        data = data.filter(function(todo){
+            return todo.item.replace(/ /g,'-') !== req.params.item
+        })
+        res.json(data);
     })
 }
