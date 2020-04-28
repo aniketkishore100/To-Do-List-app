@@ -1,22 +1,43 @@
-let data = [{item: "heyy"}];
 
+const mongoose  = require('mongoose')
+const Schema = mongoose.Schema
+
+//defining a connection to database
+mongoose.connect('mongodb://localhost/table',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+
+//defining Schema
+const todoSchema = new Schema({
+    item: String
+});
+
+var ToDo = mongoose.model('todo',todoSchema)
 
 module.exports = function(app){
     
 
     app.get('/todo',(req,res)=>{
-        res.render('index',{data:data})
+        ToDo.find({},function(err,data){
+            if (err) throw err
+            res.render('index',{data:data})
+        })
+        
     })
     
     app.post('/todo',(req,res)=>{
-        data.push(req.body);
-        res.json({success:true,todo:data})
+        var newToDo = new ToDo(req.body).save(function(err,data){
+            if (err) throw err
+            console.log(data)
+            res.json({success:true,todo:data})
+        })
     })
 
     app.delete('/todo/:item',(req,res)=>{
-        data = data.filter(function(todo){
-            return todo.item.replace(/ /g,'-') !== req.params.item
-        })
-        res.json(data);
+        ToDo.find({item: req.params.item.replace(/\-/g, " ")}).remove(function(err,data){
+            if (err) throw err
+            res.json(data) 
+        }) 
     })
 }
