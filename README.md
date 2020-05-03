@@ -28,3 +28,7 @@ The Web-App is made using Node JS, Express, Pug(template engine), CSS, JavaScrip
  - **public/assets** - Contains the static files i.e CSS and JS for front-end.
  - **views/index.pug** - Consists of the template engine file for the HTML code.
 
+## Instruction for Usage:
+
+ - **Creating an item** : Just type the task and press the "**Add Item**" button.
+ - **Deleting Item**  :Just click on the item shown in the list.
