@@ -17,6 +17,9 @@ var ToDo = mongoose.model('todo',todoSchema)
 
 module.exports = function(app){
     
+    app.get('/',(req,res)=>{
+        res.redirect('todo');
+    })
 
     app.get('/todo',(req,res)=>{
         ToDo.find({},function(err,data){
