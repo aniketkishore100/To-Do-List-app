@@ -1,12 +1,23 @@
 body{
-    background: #ffe4f2;
-    /* background-image: linear-gradient( to bottom right,#f8abd2 ,#af30c9); */
+    
+    height: 100%;
     background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:#989898;;
+    margin: 0;
 }
 
-#todo-table{
+.fullscreen{
+    background-image: linear-gradient( to bottom right,#0f2027,#203a43,#2c5364);
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: auto;
+    padding-top: 15px;
+}
+
+.todo-table{
+    min-height: 100%;
     position: relative;
     width: 95%;
     background: #090d13;
